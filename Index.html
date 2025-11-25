@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fit To Fit Yoga</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: #0a3d62;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    header .logo {
+      height: 50px;
+      width: auto;
+      border-radius: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #1e90ff;
+      transform: scale(1.1);
+    }
+
+    .hero {
+      position: relative;
+      background: url('https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      animation: slideIn 1.5s ease-out;
+    }
+
+    .hero .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #1e90ff;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .hero .button:hover {
+      background: #104e8b;
+      transform: scale(1.1);
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    h2 {
+      color: #0a3d62;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .classes img, .instructors img, .products img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .classes img:hover, .instructors img:hover, .products img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .card {
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      background: #0a3d62;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Scroll animation */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav {
+        margin-top: 10px;
+      }
+      .hero {
+        height: 60vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h2 { font-size: 1.5rem; }
+      .hero .overlay p { font-size: 0.9rem; }
+      .hero .button { padding: 10px 20px; font-size: 0.9rem; }
+      footer { padding: 15px; font-size: 0.9rem; }
+      nav a { margin-left: 0; display: block; margin-top: 5px; font-size: 0.9rem; }
+      .grid { gap: 15px; }
+      .classes img, .instructors img, .products img { height: 150px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg" alt="Fit To Fit Yoga Logo" class="logo">
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#classes">Classes</a>
+    <a href="#instructors">Instructors</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="home" class="hero fade-in-section">
+  <div class="overlay">
+    <h2>Find Your Balance, Energy & Strength</h2>
+    <p>Welcome to Fit To Fit Yoga Studio</p>
+    <a href="#classes" class="button">Join a Class</a>
+  </div>
+</section>
+
+<section id="about" class="fade-in-section">
+  <h2>About Us</h2>
+  <p>Fit To Fit Yoga is dedicated to helping you improve your flexibility, strength, and inner peace. Whether you're a beginner or experienced, our classes support your journey to wellness.</p>
+</section>
+
+<section id="classes" class="classes fade-in-section">
+  <h2>Our Classes</h2>
+  <div class="grid">
+    <div><img src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3"><h3>Beginner Yoga</h3></div>
+    <div><img src="https://images.unsplash.com/photo-1505678261036-a3fcc5e884ee"><h3>Advanced Flow</h3></div>
+    <div><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b"><h3>Meditation</h3></div>
+  </div>
+</section>
+
+<section id="instructors" class="instructors fade-in-section">
+  <h2>Meet Our Instructors</h2>
+  <div class="grid">
+    <div><img src="https://images.unsplash.com/photo-1595950658283-9f5d0c06f23c"><h3>Sarah</h3></div>
+    <div><img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39"><h3>Daniel</h3></div>
+    <div><img src="https://images.unsplash.com/photo-1552058544-f2b08422138a"><h3>Maya</h3></div>
+  </div>
+</section>
+
+<section id="products" class="products fade-in-section">
+  <h2>Yoga Products</h2>
+  <div class="grid">
+    <div><img src="https://images.pexels.com/photos/3822864/pexels-photo-3822864.jpeg"><h3>Yoga Mat</h3></div>
+    <div><img src="https://images.pexels.com/photos/19238581/pexels-photo-19238581.jpeg"><h3>Yoga Block</h3></div>
+    <div><img src="https://images.pexels.com/photos/1325711/pexels-photo-1325711.jpeg"><h3>Water Bottle</h3></div>
+  </div>
+</section>
+
+<section id="contact" class="fade-in-section">
+  <h2>Contact Us</h2>
+  <p>Email: support@fittofit.com</p>
+  <p>Phone: +123 456 789</p>
+</section>
+
+<section id="pricing" class="fade-in-section">
+  <h2>Pricing Plans</h2>
+  <div class="grid">
+    <div class="card"><h3>Basic</h3><p>$30/month</p></div>
+    <div class="card"><h3>Standard</h3><p>$50/month</p></div>
+    <div class="card"><h3>Premium</h3><p>$70/month</p></div>
+  </div>
+</section>
+
+<footer class="fade-in-section">
+  <p>© 2025 Fit To Fit Yoga | Follow us on social media</p>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('.fade-in-section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
+
+</body>
+</html>
